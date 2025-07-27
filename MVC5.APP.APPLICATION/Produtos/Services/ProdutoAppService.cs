@@ -1,6 +1,8 @@
-﻿using MVC5.APP.APPLICATION.Produtos.DTO;
+﻿using AutoMapper;
+using MVC5.APP.APPLICATION.Produtos.DTO;
 using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Services.Interfaces;
+using System.Collections.Generic;
 
 namespace MVC5.APP.APPLICATION.Produtos.Services
 {
@@ -8,17 +10,21 @@ namespace MVC5.APP.APPLICATION.Produtos.Services
     {
 
         private readonly IProdutoService _produtoService;
+        private readonly IMapper _mapper;
 
-        public ProdutoAppService(IProdutoService produtoService)
+        public ProdutoAppService(IProdutoService produtoService, IMapper mapper)
         {
             this._produtoService = produtoService;
+            this._mapper = mapper;
         }
 
-        public ProdutoResponse RecuperarProdutoPorSKU(string sku)
+        public IEnumerable<ProdutoResponse> RecuperarListaProdutos()
         {
-            this._produtoService.IsValidProduto(sku);
+           var produtos = this._produtoService.ListarProdutos();
+           
+           var listaRespostas = _mapper.Map<IEnumerable<ProdutoResponse>>(produtos);
 
-            return new ProdutoResponse();
+            return listaRespostas;
         }
     }
 }

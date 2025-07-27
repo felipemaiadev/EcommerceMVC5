@@ -5,6 +5,7 @@ namespace MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces
 {
     public interface IProdutoRepository
     {
-        IEnumerable<Produto> RecuperarProdutoPorSKU(string sku);
+        Produto RecuperarProdutoPorSKU(string sku);
+        IEnumerable<Produto> RecuperarTodosProdutos();
     }
 }

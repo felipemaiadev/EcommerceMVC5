@@ -7,11 +7,20 @@ namespace MVC5.APP.INFRA.Produtos.Respositories
     public class ProdutoRepositoryMySQL : IProdutoRepository
     {
 
-        IEnumerable<Produto> IProdutoRepository.RecuperarProdutoPorSKU(string sku)
+        Produto IProdutoRepository.RecuperarProdutoPorSKU(string sku)
         {
             // Producurar no MySql os produtos e retonrnar
 
-            IEnumerable<Produto> produtos = new List<Produto> { new Produto { Descricao = "XPTO"} };
+            Produto produto =  new Produto { Descricao = "XPTO"} ;
+
+            return produto;
+        }
+
+        public IEnumerable<Produto> RecuperarTodosProdutos()
+        {
+            // Producurar no MySql os produtos e retonrnar
+
+            IEnumerable<Produto> produtos = new List<Produto> { new Produto { Descricao = "XPTO" } };
 
             return produtos;
         }

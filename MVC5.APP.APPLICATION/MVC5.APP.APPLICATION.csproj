@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -46,6 +49,7 @@
     <Compile Include="Clientes\DTO\ClienteResponse.cs" />
     <Compile Include="Produtos\DTO\ProdutoCadastrarRequest.cs" />
     <Compile Include="Produtos\DTO\ProdutoResponse.cs" />
+    <Compile Include="Produtos\Profile\ProdutoMapping.cs" />
     <Compile Include="Produtos\Services\Interfaces\IProdutoAppService.cs" />
     <Compile Include="Produtos\Services\ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +62,9 @@
       <Project>{EB3F95E0-3C41-4132-ACD2-456B86A774F4}</Project>
       <Name>MVC5.APP.DOMAIN</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

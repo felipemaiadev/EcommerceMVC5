@@ -1,4 +1,5 @@
-﻿using MVC5.APP.APPLICATION.Produtos.Services;
+﻿using AutoMapper;
+using MVC5.APP.APPLICATION.Produtos.Services;
 using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Services;
@@ -24,6 +25,15 @@ namespace MVC5.APP.WEB.Extensions
             container.Register<IProdutoService, ProdutoService>(Lifestyle.Scoped);
             container.Register<IProdutoAppService, ProdutoAppService>(Lifestyle.Scoped);
             container.Register<SystemContext>(Lifestyle.Scoped);
+
+
+            var configMapper = new MapperConfiguration(cfg =>
+            {
+                cfg.AddMaps("MVC5.APP.APPLICATION");
+            });
+
+            container.RegisterInstance(configMapper);
+            container.Register<IMapper>(() => configMapper.CreateMapper(container.GetInstance));
 
             container.RegisterMvcControllers();
 

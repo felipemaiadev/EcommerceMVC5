@@ -1,5 +1,7 @@
-﻿using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
+﻿using MVC5.APP.DOMAIN.Produtos.Entities;
+using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Services.Interfaces;
+using System.Collections.Generic;
 
 namespace MVC5.APP.DOMAIN.Produtos.Services
 {
@@ -17,9 +19,17 @@ namespace MVC5.APP.DOMAIN.Produtos.Services
 
         public bool IsValidProduto(string sku)
         {
-            _produtoRepository.RecuperarProdutoPorSKU(sku);
+            var produtos =  _produtoRepository.RecuperarProdutoPorSKU(sku);
+
 
             return true;
+        }
+
+        public IEnumerable<Produto> ListarProdutos()
+        {
+            var produtos = _produtoRepository.RecuperarTodosProdutos();
+
+            return produtos;
         }
     }
 }

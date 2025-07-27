@@ -1,9 +1,5 @@
-﻿using System.Web;
+﻿using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
-using Microsoft.Ajax.Utilities;
-using MVC5.APP.APPLICATION.Produtos.DTO;
-using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
 
 namespace MVC5.APP.WEB.Controllers.Produtos
 {
@@ -32,9 +28,9 @@ namespace MVC5.APP.WEB.Controllers.Produtos
             return View();
         }
 
-        public ActionResult GetProductBySku(string request)
+        public ActionResult GetListaProdutos()
         {
-            var response =   this._produtoAppService.RecuperarProdutoPorSKU(request);
+            var response = this._produtoAppService.RecuperarListaProdutos();
             Response.StatusCode = 202; // Accepted
             Response.Headers["X-Custom-Header"] = "MyValue";
             return Content("Valor sendo retornado pelo Servidor", "text/plain");
