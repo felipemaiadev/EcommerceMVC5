@@ -1,17 +1,19 @@
 ﻿using MVC5.APP.DOMAIN.Produtos.Entities;
 using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
+using System.Collections.Generic;
 
 namespace MVC5.APP.INFRA.Produtos.Respositories
 {
     public class ProdutoRepositoryMySQL : IProdutoRepository
     {
-        public Produto RecuperarProdutoPorSKU(string sku)
+
+        IEnumerable<Produto> IProdutoRepository.RecuperarProdutoPorSKU(string sku)
         {
             // Producurar no MySql os produtos e retonrnar
 
-            Produto produto = new Produto();
-                
-            return produto;
+            IEnumerable<Produto> produtos = new List<Produto> { new Produto { Descricao = "XPTO"} };
+
+            return produtos;
         }
     }
 }

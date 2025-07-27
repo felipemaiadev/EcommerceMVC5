@@ -1,13 +1,15 @@
-﻿using System.Web;
-using System.Web.Mvc;
-using MVC5.APP.APPLICATION.Produtos.Services;
+﻿using MVC5.APP.APPLICATION.Produtos.Services;
 using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Services;
 using MVC5.APP.DOMAIN.Produtos.Services.Interfaces;
+using MVC5.APP.INFRA.Produtos.Context;
 using MVC5.APP.INFRA.Produtos.Respositories;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
+using SimpleInjector.Integration.Web.Mvc;
+using System.Web;
+using System.Web.Mvc;
 
 namespace MVC5.APP.WEB.Extensions
 {
@@ -21,12 +23,19 @@ namespace MVC5.APP.WEB.Extensions
             container.Register<IProdutoRepository, ProdutoRepositorySQLSERVER>(Lifestyle.Scoped);
             container.Register<IProdutoService, ProdutoService>(Lifestyle.Scoped);
             container.Register<IProdutoAppService, ProdutoAppService>(Lifestyle.Scoped);
+            container.Register<SystemContext>(Lifestyle.Scoped);
 
-            //container.RegisterResolver();
+            container.RegisterMvcControllers();
 
-            //container.Verify();
+            container.Verify();
 
-            //DependencyResolver.SetResolver(new SimpleInjectorDependecyResolver());
+            DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+
+        }
+
+        public static Container GetContainer()
+        {
+            return container;
         }
     }
 }
