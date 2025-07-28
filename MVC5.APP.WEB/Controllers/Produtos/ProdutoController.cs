@@ -12,15 +12,12 @@ namespace MVC5.APP.WEB.Controllers.Produtos
             this._produtoAppService = produtoAppService;
         }
 
-        //public ProdutoController()
-        //{
-
-        //}
-
+      
         // GET: Produto
         public ActionResult Index()
         {
-            return View();
+            var response = this._produtoAppService.RecuperarListaProdutos();
+            return View(response);
         }
 
         public ActionResult Cadastro()
@@ -32,8 +29,8 @@ namespace MVC5.APP.WEB.Controllers.Produtos
         {
             var response = this._produtoAppService.RecuperarListaProdutos();
             Response.StatusCode = 202; // Accepted
-            Response.Headers["X-Custom-Header"] = "MyValue";
-            return Content("Valor sendo retornado pelo Servidor", "text/plain");
+            Response.Headers["X-Custom-Header"] = "UmValorNoHeader";
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

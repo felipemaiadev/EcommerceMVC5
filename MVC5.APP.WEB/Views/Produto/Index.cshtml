@@ -1,4 +1,4 @@
-﻿
+﻿@model List<MVC5.APP.APPLICATION.Produtos.DTO.ProdutoResponse>
 @{
     ViewBag.Title = "Produtos";
 }
@@ -9,8 +9,28 @@
 
     <div class="col-10"> Registro de um novo Produto </div>
     <div class="col-2">
-      @Html.ActionLink("Register New", "Cadastro", "Produto", new { area = "" }, new { @class = "nav-link btn btn-info" })
+        @Html.ActionLink("Register New", "Cadastro", "Produto", new { area = "" }, new { @class = "nav-link btn btn-info" })
     </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>SKU</th>
+                <th>Descrição</th>
+                <th>Fabricante</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model)
+            {
+                <tr>
+                    <td>@produto.SKU</td>
+                    <td>@produto.Descricao</td>
+                    <td>@produto.Fabricante</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
 </div>
 

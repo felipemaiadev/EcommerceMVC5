@@ -3,10 +3,11 @@ const url = 'https://localhost:44353/'
 
 function GetProductBySKU() {
 
-    fetch(`${url}/produto/GetListaProdutos`).then((value) => {
-        console.log(value.json());
+  const response = fetch(`${url}/produto/GetListaProdutos`).then((value) => {
+        return value.json();
     
     },
         (error) => console.error(error));
-    
+
+    response.then((value) => console.log(value))
 }
