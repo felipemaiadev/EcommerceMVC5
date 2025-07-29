@@ -37,8 +37,9 @@ function SalvarProduto() {
       body: JSON.stringify(request)
     }
 
-    const response = fetch(`${url}produto/CadastrarProduto`, headers).then((response) => response.json());
-
+    const response = fetch(`${url}produto/CadastrarProduto`, headers)
+        .then((response) => response.json())
+        .then((value) => console.log(value));
 
 
 }
