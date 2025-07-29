@@ -32,5 +32,13 @@ namespace MVC5.APP.INFRA.Produtos.Respositories
 
             return produtos;
         }
+
+        public Produto SalvarProduto(Produto entidade)
+        {
+            var result = _context.Set<Produto>().Add(entidade);
+            _context.SaveChanges();
+
+            return result;
+        }
     }
 }

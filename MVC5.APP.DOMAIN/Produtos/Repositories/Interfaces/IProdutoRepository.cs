@@ -7,5 +7,7 @@ namespace MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces
     {
         Produto RecuperarProdutoPorSKU(string sku);
         IEnumerable<Produto> RecuperarTodosProdutos();
+
+        Produto SalvarProduto(Produto entidade);
     }
 }

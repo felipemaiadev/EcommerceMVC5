@@ -24,5 +24,10 @@ namespace MVC5.APP.INFRA.Produtos.Respositories
 
             return produtos;
         }
+
+        public Produto SalvarProduto(Produto entidade)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="Clientes\Repositories\Interfaces\IClienteRepository.cs" />
     <Compile Include="Clientes\Services\ClienteService.cs" />
     <Compile Include="Clientes\Services\Interfaces\IClienteService.cs" />
+    <Compile Include="Produtos\Comandos\ProdutoCadastrarComando.cs" />
     <Compile Include="Produtos\Entities\Produto.cs" />
     <Compile Include="Produtos\Repositories\Interfaces\IProdutoRepository.cs" />
     <Compile Include="Produtos\Services\Interfaces\IProdutoService.cs" />

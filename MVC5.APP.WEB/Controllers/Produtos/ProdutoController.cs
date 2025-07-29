@@ -1,4 +1,5 @@
-﻿using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
+﻿using MVC5.APP.APPLICATION.Produtos.DTO;
+using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
 using System.Web.Mvc;
 
 namespace MVC5.APP.WEB.Controllers.Produtos
@@ -32,5 +33,15 @@ namespace MVC5.APP.WEB.Controllers.Produtos
             Response.Headers["X-Custom-Header"] = "UmValorNoHeader";
             return Json(response, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public ActionResult CadastrarProduto(ProdutoCadastrarRequest request)
+        {
+            ProdutoResponse response = this._produtoAppService.CadastrarProduto(request);
+            Response.StatusCode = 204; // Sucesso e Algo foi Criado
+            return Json(response, JsonRequestBehavior.AllowGet);
+
+        }
+
     }
 }

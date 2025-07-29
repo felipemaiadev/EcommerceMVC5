@@ -10,6 +10,9 @@
 {
     @Html.AntiForgeryToken()
 
+
+    var formField = Model;
+
     <div class="form-horizontal">
         <h4>Cadastro Novo Produto</h4>
         <hr />
@@ -48,7 +51,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Create" class="btn btn-default btn-outline-success my-lg-4" onclick="GetProductBySKU()" />
+                <input type="button" value="ChamarBackEnd" class="btn btn-default btn-outline-success my-lg-4" onclick="SalvarProduto()" />
             </div>
         </div>
     </div>
