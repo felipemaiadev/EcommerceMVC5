@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\Repositories\ClienteRepositoryMySQL.cs" />
+    <Compile Include="Clientes\Repositories\ClienteRepositorySQLSERVER.cs" />
     <Compile Include="Migrations\202507272042174_Initial.cs" />
     <Compile Include="Migrations\202507272042174_Initial.Designer.cs">
       <DependentUpon>202507272042174_Initial.cs</DependentUpon>

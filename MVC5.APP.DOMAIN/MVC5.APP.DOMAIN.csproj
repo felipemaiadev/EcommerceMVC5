@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\Comando\ClienteCadastrarComando.cs" />
     <Compile Include="Clientes\Entities\Cliente.cs" />
     <Compile Include="Clientes\Repositories\Interfaces\IClienteRepository.cs" />
     <Compile Include="Clientes\Services\ClienteService.cs" />
@@ -52,8 +53,6 @@
     <Compile Include="Produtos\Services\ProdutoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clientes\Entities\Comando\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
