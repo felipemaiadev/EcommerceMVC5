@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 using MVC5.APP.APPLICATION.Produtos.Services;
 using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
+using MVC5.APP.DOMAIN.Pedidos.Repositories;
+using MVC5.APP.DOMAIN.Pedidos.Services;
+using MVC5.APP.DOMAIN.Pedidos.Services.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Services;
 using MVC5.APP.DOMAIN.Produtos.Services.Interfaces;
+using MVC5.APP.INFRA.Pedidos.Repositories;
 using MVC5.APP.INFRA.Produtos.Context;
 using MVC5.APP.INFRA.Produtos.Respositories;
 using SimpleInjector;
@@ -24,6 +28,10 @@ namespace MVC5.APP.WEB.Extensions
             container.Register<IProdutoRepository, ProdutoRepositorySQLSERVER>(Lifestyle.Scoped);
             container.Register<IProdutoService, ProdutoService>(Lifestyle.Scoped);
             container.Register<IProdutoAppService, ProdutoAppService>(Lifestyle.Scoped);
+
+            container.Register<IPedidoRepository, PedidoRepository>(Lifestyle.Scoped);
+            container.Register<IPedidoService, PedidoService>(Lifestyle.Scoped);
+            
             container.Register<SystemContext>(Lifestyle.Scoped);
 
 

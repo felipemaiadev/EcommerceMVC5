@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Entidade.cs" />
     <Compile Include="Clientes\Comando\ClienteCadastrarComando.cs" />
     <Compile Include="Clientes\Entities\Cliente.cs" />
     <Compile Include="Clientes\Repositories\Interfaces\IClienteRepository.cs" />
     <Compile Include="Clientes\Services\ClienteService.cs" />
     <Compile Include="Clientes\Services\Interfaces\IClienteService.cs" />
+    <Compile Include="Pedidos\Entities\Pedido.cs" />
+    <Compile Include="Pedidos\Entities\PedidoItem.cs" />
+    <Compile Include="Pedidos\Repositories\IPedidoRepository.cs" />
+    <Compile Include="Pedidos\Services\Interfaces\IPedidoService.cs" />
+    <Compile Include="Pedidos\Services\PedidoService.cs" />
     <Compile Include="Produtos\Comandos\ProdutoCadastrarComando.cs" />
     <Compile Include="Produtos\Entities\Produto.cs" />
     <Compile Include="Produtos\Repositories\Interfaces\IProdutoRepository.cs" />

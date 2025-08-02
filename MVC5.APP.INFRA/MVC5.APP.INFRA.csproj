@@ -57,8 +57,13 @@
     <Compile Include="Migrations\202507272042174_Initial.Designer.cs">
       <DependentUpon>202507272042174_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202508022146583_Relacionamento.cs" />
+    <Compile Include="Migrations\202508022146583_Relacionamento.Designer.cs">
+      <DependentUpon>202508022146583_Relacionamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Contexto\SystemContext.cs" />
+    <Compile Include="Pedidos\Repositories\PedidoRepository.cs" />
     <Compile Include="Produtos\Respositories\ProdutoRepositoryMySQL.cs" />
     <Compile Include="Produtos\Respositories\ProdutoRepositorySQLSERVER.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +84,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202507272042174_Initial.resx">
       <DependentUpon>202507272042174_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202508022146583_Relacionamento.resx">
+      <DependentUpon>202508022146583_Relacionamento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
