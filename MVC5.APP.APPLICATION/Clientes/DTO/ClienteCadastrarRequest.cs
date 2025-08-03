@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MVC5.APP.APPLICATION.Clientes.ViewModel
+namespace MVC5.APP.APPLICATION.Clientes.DTO
 {
     public class ClienteCadastrarRequest
     {
@@ -14,7 +14,8 @@ namespace MVC5.APP.APPLICATION.Clientes.ViewModel
         [Required]
         [MaxLength(11)]
         public string Cpf { get; set; }
-
+        
+        [Required]
         public string Endereco { get; set; }
 
     }

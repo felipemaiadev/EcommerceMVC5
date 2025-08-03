@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="Clientes\DTO\ClienteCadastrarRequest.cs" />
     <Compile Include="Clientes\DTO\ClienteResponse.cs" />
+    <Compile Include="Clientes\Profiles\ClienteMapping.cs" />
+    <Compile Include="Clientes\Services\ClienteAppServices.cs" />
+    <Compile Include="Clientes\Services\Interfaces\IClienteAppServices.cs" />
     <Compile Include="Produtos\DTO\ProdutoCadastrarRequest.cs" />
     <Compile Include="Produtos\DTO\ProdutoResponse.cs" />
     <Compile Include="Produtos\Profile\ProdutoMapping.cs" />
@@ -54,9 +57,7 @@
     <Compile Include="Produtos\Services\ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clientes\Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MVC5.APP.DOMAIN\MVC5.APP.DOMAIN.csproj">
       <Project>{EB3F95E0-3C41-4132-ACD2-456B86A774F4}</Project>

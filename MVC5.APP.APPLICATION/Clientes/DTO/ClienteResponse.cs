@@ -1,4 +1,4 @@
-﻿namespace MVC5.APP.APPLICATION.Clientes.ViewModel
+﻿namespace MVC5.APP.APPLICATION.Clientes.DTO
 {
     public class ClienteResponse
     {
