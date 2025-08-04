@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace MVC5.APP.APPLICATION.Clientes.Services
 {
-    internal class ClienteAppServices : IClienteAppServices
+    public class ClienteAppServices : IClienteAppServices
     {
 
         private readonly IClienteService _clienteservice;
