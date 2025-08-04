@@ -1,12 +1,17 @@
 ﻿using AutoMapper;
+using MVC5.APP.APPLICATION.Clientes.Services;
+using MVC5.APP.APPLICATION.Clientes.Services.Interfaces;
 using MVC5.APP.APPLICATION.Produtos.Services;
 using MVC5.APP.APPLICATION.Produtos.Services.Interfaces;
+using MVC5.APP.DOMAIN.Clientes.Repositories.Interfaces;
+using MVC5.APP.DOMAIN.Clientes.Services.Interfaces;
 using MVC5.APP.DOMAIN.Pedidos.Repositories;
 using MVC5.APP.DOMAIN.Pedidos.Services;
 using MVC5.APP.DOMAIN.Pedidos.Services.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Repositories.Interfaces;
 using MVC5.APP.DOMAIN.Produtos.Services;
 using MVC5.APP.DOMAIN.Produtos.Services.Interfaces;
+using MVC5.APP.INFRA.Clientes.Repositories;
 using MVC5.APP.INFRA.Pedidos.Repositories;
 using MVC5.APP.INFRA.Produtos.Context;
 using MVC5.APP.INFRA.Produtos.Respositories;
@@ -28,6 +33,10 @@ namespace MVC5.APP.WEB.Extensions
             container.Register<IProdutoRepository, ProdutoRepositorySQLSERVER>(Lifestyle.Scoped);
             container.Register<IProdutoService, ProdutoService>(Lifestyle.Scoped);
             container.Register<IProdutoAppService, ProdutoAppService>(Lifestyle.Scoped);
+
+            container.Register<IClienteRepository, ClienteRepositorySQLSERVER>(Lifestyle.Scoped);
+            container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
+            container.Register<IClienteAppServices, ClienteAppServices>(Lifestyle.Scoped);
 
             container.Register<IPedidoRepository, PedidoRepository>(Lifestyle.Scoped);
             container.Register<IPedidoService, PedidoService>(Lifestyle.Scoped);
